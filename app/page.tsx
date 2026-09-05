@@ -3,8 +3,7 @@
 import { useEffect, useState } from 'react';
 
 const headline = 'Lingling Yang. I make people look*.';
-// Add the uploaded video URL here when the film is ready.
-const heroVideo: string = '';
+const heroVideo = '/hero-video.m4v';
 const footerVideo: string = '';
 
 export default function Home() {
@@ -23,7 +22,7 @@ export default function Home() {
       const tick = () => {
         if (cancelled) return;
         setLength(i);
-        if (i === headline.length) { i = 0; timer = setTimeout(tick, 800); }
+        if (i === headline.length) { i = 0; timer = setTimeout(tick, 2000); }
         else { i++; timer = setTimeout(tick, 120); }
       };
       tick();
