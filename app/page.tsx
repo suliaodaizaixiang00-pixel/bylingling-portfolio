@@ -8,9 +8,12 @@ const footerVideo: string = '';
 
 export default function Home() {
   const [length, setLength] = useState(0);
+  const [videoReady, setVideoReady] = useState(false);
   const [heroOpacity, setHeroOpacity] = useState(1);
 
   useEffect(() => {
+    if (!videoReady) return;
+
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let timer: ReturnType<typeof setTimeout>;
     let cancelled = false;
@@ -39,11 +42,11 @@ export default function Home() {
     scroll();
     window.addEventListener('scroll', scroll, { passive: true });
     return () => { cancelled = true; clearTimeout(timer); cancelAnimationFrame(frame); motion.removeEventListener('change', start); window.removeEventListener('scroll', scroll); };
-  }, []);
+  }, [videoReady]);
 
   return (
     <main>
-      {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" /></div>}
+      {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" onLoadedData={() => setVideoReady(true)} onCanPlay={() => setVideoReady(true)} /></div>}
       <section className="hero" style={{ opacity: heroOpacity }} aria-label="Introduction">
         <div className="headline-wrap">
           <h1 aria-label={headline}><span aria-hidden="true">{headline.slice(0, length) || '\u00a0'}</span></h1>
