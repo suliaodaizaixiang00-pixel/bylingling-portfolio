@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <main>
-      {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" onLoadedData={() => setVideoReady(true)} onCanPlay={() => setVideoReady(true)} /></div>}
+      {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><div className="film-frame"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" onLoadedData={() => setVideoReady(true)} onCanPlay={() => setVideoReady(true)} /></div></div>}
       <section className="hero" style={{ opacity: heroOpacity }} aria-label="Introduction">
         <div className="headline-wrap">
           <h1 aria-label={headline}><span aria-hidden="true">{headline.slice(0, length) || '\u00a0'}</span></h1>
