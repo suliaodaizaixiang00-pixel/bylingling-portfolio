@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-const headline = 'Lingling Yang. I make people look*.';
+const firstLine = 'Lingling Yang.';
+const secondLine = 'I make people look*.';
+const headline = `${firstLine}\n${secondLine}`;
 const heroVideo = '/hero-video.mov';
 const footerVideo: string = '';
 
@@ -49,7 +51,10 @@ export default function Home() {
       {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><div className="film-frame"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" onLoadedData={() => setVideoReady(true)} onCanPlay={() => setVideoReady(true)} /></div></div>}
       <section className="hero" style={{ opacity: heroOpacity }} aria-label="Introduction">
         <div className="headline-wrap">
-          <h1 aria-label={headline}><span aria-hidden="true">{headline.slice(0, length) || '\u00a0'}</span></h1>
+          <h1 aria-label={headline}>
+            <span className="headline-line" aria-hidden="true">{firstLine.slice(0, length) || '\u00a0'}</span>
+            <span className="headline-line headline-line-secondary" aria-hidden="true">{secondLine.slice(0, Math.max(0, length - firstLine.length - 1)) || '\u00a0'}</span>
+          </h1>
         </div>
         <p className={`footnote ${length === headline.length ? 'visible' : ''}`}>*And sometimes click</p>
       </section>
