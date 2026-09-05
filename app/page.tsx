@@ -77,9 +77,9 @@ export default function Home() {
         </div>
         <p className={`footnote ${length === headline.length ? 'visible' : ''}`}>*And sometimes click</p>
       </section>
-      <section className="second-page" aria-label="Portfolio navigation">
+      <section className="second-page" id="lingling" aria-label="About Lingling Yang">
         <header className="portfolio-header">
-          <a className="portfolio-brand nav-hover" href="#top">LINGLING YANG</a>
+          <a className="portfolio-brand nav-hover" href="#lingling">LINGLING YANG</a>
           <nav className="portfolio-nav" aria-label="Portfolio sections">
             <a className="nav-item nav-hover" href="#experience"><span>(A)</span> Experience</a>
             <a className="nav-item nav-hover" href="#work"><span>(B)</span> Work</a>
@@ -87,7 +87,23 @@ export default function Home() {
           </nav>
           <time className="portfolio-clock" aria-label="Current local time">{clock}</time>
         </header>
-        <div className="second-page-space" id="experience" />
+        <div className="profile-layout">
+          <div className="profile-copy">
+            <p>
+              Hi, I’m Lingling — a digital marketer with a background in Advertising and Anthropology, with hands-on experience across beauty, FMCG, and culture &amp; entertainment. <span className="profile-accent">SPORTY</span> in spirit, <span className="profile-accent">TENDER</span> in how I see people, and <span className="profile-accent">CURIOUS</span> about what comes next.
+            </p>
+            <p>
+              My experience spans influencer marketing, product marketing, content marketing, campaign execution, consumer research, and performance analysis, allowing me to approach marketing with both creative thinking and a data-informed mindset.
+            </p>
+            <p>
+              I’m curious about how emerging technologies, especially AI, are changing the way we create, communicate, and market. I actively bring new tools into my workflows — from research and ideation to content development, data analysis, and coding-assisted projects — and enjoy discovering new ways to turn ideas into real outcomes.
+            </p>
+          </div>
+          <figure className="profile-image-wrap">
+            <img className="profile-image" src="/lingling-portrait.png" alt="Lingling Yang standing beside a blue lake and mountain landscape" />
+          </figure>
+        </div>
+        <span id="experience" className="section-anchor section-anchor-experience" />
         <span id="work" className="section-anchor" />
         <span id="contact" className="section-anchor" />
       </section>
