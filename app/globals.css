@@ -17,7 +17,7 @@ body { margin:0; background:var(--background); color:var(--foreground); font-fam
 h1 { font-size:10.9vw; line-height:1.03; letter-spacing:-.5vw; font-weight:400; margin:0 auto; width:98%; text-wrap:wrap; }
 .footnote { position:absolute; bottom:20%; width:100%; margin:0; font-size:25px; line-height:26px; letter-spacing:-.18px; visibility:hidden; }
 .footnote.visible { visibility:visible; }
-.hero-video { position:fixed; top:0; left:50%; width:82%; height:100svh; transform:translateX(-50%); will-change:opacity; }
+.hero-video { position:fixed; top:0; left:50%; width:60%; height:100svh; transform:translateX(-50%); will-change:opacity; }
 .film-frame { position:absolute; top:50%; left:0; width:100%; transform:translateY(-50%); overflow:hidden; border-radius:48px; isolation:isolate; }
 .hero-video video { position:relative; z-index:0; display:block; width:100%; height:auto; opacity:.82; filter:contrast(1.08) saturate(.72) sepia(.08) brightness(.84); }
 .film-frame::before { content:''; position:absolute; z-index:1; inset:0; pointer-events:none; opacity:.18; mix-blend-mode:soft-light; background-image:repeating-radial-gradient(circle at 17% 23%,rgba(255,255,255,.32) 0 .5px,transparent .8px 3px); background-size:5px 5px; }
