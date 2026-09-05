@@ -3,13 +3,12 @@
 import { useEffect, useState } from 'react';
 
 const headline = 'Lingling Yang. I make people look*.';
-const heroVideo = '/hero-video.m4v';
+const heroVideo = '/hero-video.mov';
 const footerVideo: string = '';
 
 export default function Home() {
-  const [length, setLength] = useState(headline.length);
-  const [scrolled, setScrolled] = useState(false);
-  const [videoHidden, setVideoHidden] = useState(false);
+  const [length, setLength] = useState(0);
+  const [heroOpacity, setHeroOpacity] = useState(1);
 
   useEffect(() => {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -29,16 +28,23 @@ export default function Home() {
     };
     start();
     motion.addEventListener('change', start);
-    const scroll = () => { setScrolled(window.scrollY > 200); setVideoHidden(window.scrollY > 400); };
+    let frame = 0;
+    const scroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const fadeDistance = Math.max(window.innerHeight * 0.8, 400);
+        setHeroOpacity(Math.max(0, 1 - window.scrollY / fadeDistance));
+      });
+    };
     scroll();
     window.addEventListener('scroll', scroll, { passive: true });
-    return () => { cancelled = true; clearTimeout(timer); motion.removeEventListener('change', start); window.removeEventListener('scroll', scroll); };
+    return () => { cancelled = true; clearTimeout(timer); cancelAnimationFrame(frame); motion.removeEventListener('change', start); window.removeEventListener('scroll', scroll); };
   }, []);
 
   return (
     <main>
-      {heroVideo && <div className={`hero-video ${videoHidden ? 'is-hidden' : ''}`} aria-hidden="true"><video src={heroVideo} autoPlay muted loop playsInline /></div>}
-      <section className={`hero ${scrolled ? 'is-hidden' : ''}`} aria-label="Introduction">
+      {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" /></div>}
+      <section className="hero" style={{ opacity: heroOpacity }} aria-label="Introduction">
         <div className="headline-wrap">
           <h1 aria-label={headline}><span aria-hidden="true">{headline.slice(0, length) || '\u00a0'}</span></h1>
         </div>
