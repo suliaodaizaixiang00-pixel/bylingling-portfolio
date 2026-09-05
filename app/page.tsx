@@ -6,12 +6,13 @@ const firstLine = 'Lingling Yang.';
 const secondLine = 'I make people look.*';
 const headline = `${firstLine}\n${secondLine}`;
 const heroVideo = '/hero-video.mov';
-const footerVideo: string = '';
 
 export default function Home() {
   const [length, setLength] = useState(0);
   const [videoReady, setVideoReady] = useState(false);
   const [heroOpacity, setHeroOpacity] = useState(1);
+  const [pageTone, setPageTone] = useState(0);
+  const [clock, setClock] = useState('');
 
   useEffect(() => {
     if (!videoReady) return;
@@ -39,6 +40,9 @@ export default function Home() {
       frame = requestAnimationFrame(() => {
         const fadeDistance = Math.max(window.innerHeight * 0.8, 400);
         setHeroOpacity(Math.max(0, 1 - window.scrollY / fadeDistance));
+        const transitionStart = window.innerHeight * 0.55;
+        const transitionDistance = window.innerHeight * 0.45;
+        setPageTone(Math.min(1, Math.max(0, (window.scrollY - transitionStart) / transitionDistance)));
       });
     };
     scroll();
@@ -46,8 +50,23 @@ export default function Home() {
     return () => { cancelled = true; clearTimeout(timer); cancelAnimationFrame(frame); motion.removeEventListener('change', start); window.removeEventListener('scroll', scroll); };
   }, [videoReady]);
 
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const timeZone = now.toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ').pop()?.replace(/[()]/g, '').toLowerCase();
+      setClock(`${time} (${timeZone})`);
+    };
+    updateClock();
+    const interval = window.setInterval(updateClock, 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const backgroundChannel = Math.round(230 * pageTone);
+  const pageBackground = `rgb(${backgroundChannel} ${backgroundChannel} ${backgroundChannel})`;
+
   return (
-    <main>
+    <main id="top" style={{ backgroundColor: pageBackground }}>
       {heroVideo && <div className="hero-video" style={{ opacity: heroOpacity }} aria-hidden="true"><div className="film-frame"><video src={heroVideo} autoPlay muted loop playsInline preload="auto" onLoadedData={() => setVideoReady(true)} onCanPlay={() => setVideoReady(true)} /></div></div>}
       <section className="hero" style={{ opacity: heroOpacity }} aria-label="Introduction">
         <div className="headline-wrap">
@@ -58,21 +77,20 @@ export default function Home() {
         </div>
         <p className={`footnote ${length === headline.length ? 'visible' : ''}`}>*And sometimes click</p>
       </section>
-      <div className="fold">
-        <section className="about" aria-labelledby="about-title">
-          <h2 id="about-title">About Me</h2>
-          <div className="about-copy" />
-        </section>
-        <section className="work" aria-label="Selected work">
-          <div className="table-head"><h2>Client</h2><h2>Project</h2><h2>Type</h2><span /></div>
-          <div className="work-space" />
-        </section>
-        <section className="contact" aria-labelledby="contact-title"><h2 id="contact-title">Contact</h2></section>
-        <footer>
-          <div className="credits"><p>© Lingling Yang 2026</p><p>Site</p><p>Video</p></div>
-          {footerVideo && <div className="footer-video"><video src={footerVideo} autoPlay muted loop playsInline aria-label="Closing film" /></div>}
-        </footer>
-      </div>
+      <section className="second-page" aria-label="Portfolio navigation">
+        <header className="portfolio-header">
+          <a className="portfolio-brand nav-hover" href="#top">LINGLING YANG</a>
+          <nav className="portfolio-nav" aria-label="Portfolio sections">
+            <a className="nav-item nav-hover" href="#experience"><span>(A)</span> Experience</a>
+            <a className="nav-item nav-hover" href="#work"><span>(B)</span> Work</a>
+            <a className="nav-item nav-hover" href="#contact"><span>(C)</span> Contact</a>
+          </nav>
+          <time className="portfolio-clock" aria-label="Current local time">{clock}</time>
+        </header>
+        <div className="second-page-space" id="experience" />
+        <span id="work" className="section-anchor" />
+        <span id="contact" className="section-anchor" />
+      </section>
     </main>
   );
 }
