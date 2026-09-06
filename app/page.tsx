@@ -6,6 +6,15 @@ const firstLine = 'Lingling Yang.';
 const secondLine = 'I make people look.*';
 const headline = `${firstLine}\n${secondLine}`;
 const heroVideo = '/hero-video.mov';
+const workCategories = [
+  ['01', 'Product Development', 'product-development'],
+  ['02', 'Product Marketing', 'product-marketing'],
+  ['03', 'Creative Planning', 'creative-planning'],
+  ['04', 'Influencer Marketing', 'influencer-marketing'],
+  ['05', 'Content Marketing', 'content-marketing'],
+  ['06', 'Competitions', 'competitions'],
+  ['07', 'Others', 'others'],
+] as const;
 
 export default function Home() {
   const [length, setLength] = useState(0);
@@ -13,7 +22,7 @@ export default function Home() {
   const [heroOpacity, setHeroOpacity] = useState(1);
   const [pageTone, setPageTone] = useState(0);
   const [clock, setClock] = useState('');
-  const [activeSection, setActiveSection] = useState<'lingling' | 'experience'>('lingling');
+  const [activeSection, setActiveSection] = useState<'lingling' | 'experience' | 'work'>('lingling');
 
   useEffect(() => {
     if (!videoReady) return;
@@ -57,7 +66,10 @@ export default function Home() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const experience = document.getElementById('experience');
-        setActiveSection(experience && experience.getBoundingClientRect().top <= 120 ? 'experience' : 'lingling');
+        const work = document.getElementById('work');
+        if (work && work.getBoundingClientRect().top <= 120) setActiveSection('work');
+        else if (experience && experience.getBoundingClientRect().top <= 120) setActiveSection('experience');
+        else setActiveSection('lingling');
       });
     };
     updateActiveSection();
@@ -102,7 +114,7 @@ export default function Home() {
           <a className={`portfolio-brand nav-hover ${activeSection === 'lingling' ? 'is-active' : ''}`} href="#lingling">LINGLING YANG</a>
           <nav className="portfolio-nav" aria-label="Portfolio sections">
             <a className={`nav-item nav-hover ${activeSection === 'experience' ? 'is-active' : ''}`} href="#experience"><span>(A)</span> Experience</a>
-            <a className="nav-item nav-hover" href="#work"><span>(B)</span> Work</a>
+            <a className={`nav-item nav-hover ${activeSection === 'work' ? 'is-active' : ''}`} href="#work"><span>(B)</span> Work</a>
             <a className="nav-item nav-hover" href="#contact"><span>(C)</span> Contact</a>
           </nav>
           <time className="portfolio-clock" aria-label="Current local time">{clock}</time>
@@ -217,7 +229,22 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <span id="work" className="section-anchor" />
+        <section className="work-index" id="work" aria-labelledby="work-index-title">
+          <div className="work-index-intro">
+            <p className="work-kicker">Selected fields</p>
+            <h2 id="work-index-title">Work Index</h2>
+            <p className="work-index-note">Explore projects by discipline.</p>
+          </div>
+          <nav className="work-category-list" aria-label="Work categories">
+            {workCategories.map(([number, label, slug]) => (
+              <a className="work-category" href={`/work/${slug}`} key={slug}>
+                <span className="work-category-number">{number}</span>
+                <span className="work-category-name">{label}</span>
+                <span className="work-category-arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </nav>
+        </section>
         <span id="contact" className="section-anchor" />
       </section>
     </main>
