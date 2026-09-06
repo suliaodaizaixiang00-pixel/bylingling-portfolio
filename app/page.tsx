@@ -13,6 +13,7 @@ export default function Home() {
   const [heroOpacity, setHeroOpacity] = useState(1);
   const [pageTone, setPageTone] = useState(0);
   const [clock, setClock] = useState('');
+  const [activeSection, setActiveSection] = useState<'lingling' | 'experience'>('lingling');
 
   useEffect(() => {
     if (!videoReady) return;
@@ -51,6 +52,25 @@ export default function Home() {
   }, [videoReady]);
 
   useEffect(() => {
+    let frame = 0;
+    const updateActiveSection = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const experience = document.getElementById('experience');
+        setActiveSection(experience && experience.getBoundingClientRect().top <= 120 ? 'experience' : 'lingling');
+      });
+    };
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, []);
+
+  useEffect(() => {
     const updateClock = () => {
       const now = new Date();
       const time = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -79,9 +99,9 @@ export default function Home() {
       </section>
       <section className="second-page" id="lingling" aria-label="About Lingling Yang">
         <header className="portfolio-header">
-          <a className="portfolio-brand nav-hover" href="#lingling">LINGLING YANG</a>
+          <a className={`portfolio-brand nav-hover ${activeSection === 'lingling' ? 'is-active' : ''}`} href="#lingling">LINGLING YANG</a>
           <nav className="portfolio-nav" aria-label="Portfolio sections">
-            <a className="nav-item nav-hover" href="#experience"><span>(A)</span> Experience</a>
+            <a className={`nav-item nav-hover ${activeSection === 'experience' ? 'is-active' : ''}`} href="#experience"><span>(A)</span> Experience</a>
             <a className="nav-item nav-hover" href="#work"><span>(B)</span> Work</a>
             <a className="nav-item nav-hover" href="#contact"><span>(C)</span> Contact</a>
           </nav>
