@@ -196,7 +196,7 @@ export default function Home() {
               <article className="resume-entry job-entry">
                 <div className="job-heading">
                   <h3>Shanghai Ogilvy Advertising, Shanghai</h3>
-                  <p>Account Executive</p>
+                  <p>Account Executive Intern</p>
                 </div>
                 <ul>
                   <li>Worked on integrated social campaigns for Coca-Cola China, translating campaign ideas into multi-platform activations across Weibo, WeChat, Xiaohongshu, and TikTok</li>
@@ -207,7 +207,7 @@ export default function Home() {
               <article className="resume-entry job-entry">
                 <div className="job-heading">
                   <h3>Dakuai Cultural Creativity Co., Ltd., Hangzhou</h3>
-                  <p>New Media Operation</p>
+                  <p>Marketing Intern</p>
                 </div>
                 <ul>
                   <li>Developed content marketing for one of the largest music festivals in China XIHU Music Festival, identifying audience-relevant topics and creating editorial content to strengthen its digital presence and audience engagement</li>
