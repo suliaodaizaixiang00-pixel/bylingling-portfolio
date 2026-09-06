@@ -174,7 +174,7 @@ export default function Home() {
               </article>
               <article className="resume-entry education-entry">
                 <h3>Hangzhou City University</h3>
-                <p><em>Bachelor of Arts in Advertising</em> <span aria-hidden="true">|</span> GPA: 3.90/4.0 (Top 1)<br />Government Scholarship, First-Class Honours</p>
+                <p><em>Bachelor of Arts in Advertising</em> <span aria-hidden="true">|</span> GPA: 3.9/4.0 (Top 1)<br />Government Scholarship, First-Class Honours</p>
               </article>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function Home() {
                   <p>New Media Operation</p>
                 </div>
                 <ul>
-                  <li>Developed content marketing for one of the biggest music festivals in China XIHU Music Festival, identifying audience-relevant topics and creating editorial content to strengthen its digital presence and audience engagement</li>
+                  <li>Developed content marketing for one of the largest music festivals in China XIHU Music Festival, identifying audience-relevant topics and creating editorial content to strengthen its digital presence and audience engagement</li>
                   <li>Supported community and event marketing through three festival-themed activations, contributing to 2,000 new followers and an average of 3,000 views per article.</li>
                 </ul>
               </article>
