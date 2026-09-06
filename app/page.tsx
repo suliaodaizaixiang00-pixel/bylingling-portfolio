@@ -123,7 +123,7 @@ export default function Home() {
             <img className="profile-image" src="/lingling-portrait.jpg" alt="Lingling Yang standing beside a blue lake and mountain landscape" />
           </figure>
         </div>
-        <section className="skills-index" id="experience" aria-label="Languages, skills, focus, and tools">
+        <section className="skills-index" aria-label="Languages, skills, focus, and tools">
           <div className="skills-column">
             <h2>Languages</h2>
             <ul>
@@ -162,6 +162,59 @@ export default function Home() {
               <li>Photoshop · Premiere Pro · Final Cut Pro</li>
               <li>Canva</li>
             </ul>
+          </div>
+        </section>
+        <section className="experience-page" id="experience" aria-labelledby="experience-title">
+          <div className="resume-section education-section">
+            <h2 id="experience-title">Education</h2>
+            <div className="resume-content">
+              <article className="resume-entry education-entry">
+                <h3>The Chinese University of Hong Kong</h3>
+                <p><em>Master of Arts in Anthropology</em> <span aria-hidden="true">|</span> GPA: 3.7/4.0</p>
+              </article>
+              <article className="resume-entry education-entry">
+                <h3>Hangzhou City University</h3>
+                <p><em>Bachelor of Arts in Advertising</em> <span aria-hidden="true">|</span> GPA: 3.90/4.0 (Top 1)<br />Government Scholarship, First-Class Honours</p>
+              </article>
+            </div>
+          </div>
+
+          <div className="resume-section work-section">
+            <h2>Work Experience</h2>
+            <div className="resume-content">
+              <article className="resume-entry job-entry">
+                <div className="job-heading">
+                  <h3>Mistine China, Hangzhou</h3>
+                  <p>Marketing Intern</p>
+                </div>
+                <ul>
+                  <li>Developed and executed integrated marketing campaigns for beauty brand Mistine, translating consumer insights, social trends, and product selling points into campaign communication and content strategies</li>
+                  <li>Conducted beauty market and competitor research to inform brand positioning, campaign planning, and influencer and media strategies</li>
+                  <li>Executed social and influencer marketing across multiple platforms, coordinating media placements and 66 KOL collaborations that generated 4.55M impressions and contributed to RMB 3.60M GMV</li>
+                </ul>
+              </article>
+              <article className="resume-entry job-entry">
+                <div className="job-heading">
+                  <h3>Shanghai Ogilvy Advertising, Shanghai</h3>
+                  <p>Account Executive</p>
+                </div>
+                <ul>
+                  <li>Worked on integrated social campaigns for Coca-Cola China, translating campaign ideas into multi-platform activations across Weibo, WeChat, Xiaohongshu, and TikTok</li>
+                  <li>Supported cross-market campaign delivery and optimization across 11 cities, coordinating stakeholders and translating campaign performance data into actionable post-campaign learnings</li>
+                  <li>Managed social and influencer activation, coordinating media resources and 64 creators as part of campaigns that collectively delivered 300M+ video views and 4.49M engagements</li>
+                </ul>
+              </article>
+              <article className="resume-entry job-entry">
+                <div className="job-heading">
+                  <h3>Dakuai Cultural Creativity Co., Ltd., Hangzhou</h3>
+                  <p>New Media Operation</p>
+                </div>
+                <ul>
+                  <li>Developed content marketing for one of the biggest music festivals in China XIHU Music Festival, identifying audience-relevant topics and creating editorial content to strengthen its digital presence and audience engagement</li>
+                  <li>Supported community and event marketing through three festival-themed activations, contributing to 2,000 new followers and an average of 3,000 views per article.</li>
+                </ul>
+              </article>
+            </div>
           </div>
         </section>
         <span id="work" className="section-anchor" />
