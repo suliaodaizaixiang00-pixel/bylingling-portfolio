@@ -100,10 +100,50 @@ export default function Home() {
             </p>
           </div>
           <figure className="profile-image-wrap">
-            <img className="profile-image" src="/lingling-portrait.png" alt="Lingling Yang standing beside a blue lake and mountain landscape" />
+            <img className="profile-image" src="/lingling-portrait.jpg" alt="Lingling Yang standing beside a blue lake and mountain landscape" />
           </figure>
         </div>
-        <span id="experience" className="section-anchor section-anchor-experience" />
+        <section className="skills-index" id="experience" aria-label="Languages, skills, focus, and tools">
+          <div className="skills-column">
+            <h2>Languages</h2>
+            <ul>
+              <li>English (Proficient, IELTS 7.5)</li>
+              <li>Mandarin (Native)</li>
+              <li>Cantonese (Beginner)</li>
+              <li>Spanish (Beginner)</li>
+            </ul>
+          </div>
+          <div className="skills-column">
+            <h2>Skills</h2>
+            <ul>
+              <li>Strategy &amp; Research</li>
+              <li>Content &amp; Campaigns</li>
+              <li>Data &amp; Analytics</li>
+              <li>Product &amp; Digital</li>
+            </ul>
+          </div>
+          <div className="skills-column">
+            <h2>Focus</h2>
+            <ul>
+              <li>Digital Marketing</li>
+              <li>Influencer Marketing</li>
+              <li>Product Marketing</li>
+              <li>Consumer &amp; Market Insights</li>
+            </ul>
+          </div>
+          <div className="skills-column skills-tools">
+            <h2>Tools</h2>
+            <ul>
+              <li>AI Tools</li>
+              <li>MySQL · SPSS</li>
+              <li>Google Analytics</li>
+              <li>SEO · SEM / Search Ads</li>
+              <li>Social Media Ads</li>
+              <li>Photoshop · Premiere Pro · Final Cut Pro</li>
+              <li>Canva</li>
+            </ul>
+          </div>
+        </section>
         <span id="work" className="section-anchor" />
         <span id="contact" className="section-anchor" />
       </section>
