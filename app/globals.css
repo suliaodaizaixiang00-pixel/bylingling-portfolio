@@ -32,7 +32,7 @@ h1 { font-size:10.9vw; line-height:.98; letter-spacing:-.5vw; font-weight:400; m
 @font-face { font-family:'MGM'; font-style:normal; font-weight:400; font-display:swap; src:url('/fonts/hilary-mgm.woff2') format('woff2'); }
 main { min-height:200svh; transition:background-color .06s linear; }
 .second-page { position:relative; z-index:5; min-height:100svh; color:#0c0e14; font-family:'MGM',Arial,sans-serif; font-size:14px; line-height:1.4; text-transform:uppercase; }
-.portfolio-header { position:sticky; top:0; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:20px; width:100%; padding:20px; color:#0c0e14; }
+.portfolio-header { position:sticky; z-index:20; top:0; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:20px; width:100%; padding:20px; color:#0c0e14; background:rgb(230 230 230 / 94%); border-bottom:1px solid rgb(12 14 20 / 16%); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
 .portfolio-brand { grid-column:span 2; justify-self:start; }
 .portfolio-nav { grid-column:span 8; display:flex; justify-content:center; gap:20px; }
 .nav-item { display:flex; gap:4px; white-space:nowrap; }
@@ -64,8 +64,8 @@ html { scroll-behavior:smooth; }
 
 .skills-index { position:relative; display:grid; grid-template-columns:1.05fr .8fr 1fr 1.45fr; gap:clamp(24px,4vw,72px); min-height:40svh; padding:48px 40px 72px; border-top:1px solid rgb(12 14 20 / 35%); border-bottom:1px solid rgb(12 14 20 / 18%); overflow:hidden; text-transform:none; }
 .skills-index::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.18; background-image:repeating-radial-gradient(circle at 23% 31%,rgba(12,14,20,.18) 0 .45px,transparent .7px 3px); background-size:6px 6px; }
-.skills-column { position:relative; z-index:1; }
-.skills-column h2 { margin:0 0 34px; font-family:'MGM',Arial,sans-serif; font-size:clamp(18px,1.5vw,24px); font-weight:400; line-height:1; letter-spacing:-.02em; }
+.skills-column { position:relative; z-index:1; padding-top:14px; border-top:2px solid #153d70; }
+.skills-column h2 { margin:0 0 28px; font-family:'MGM',Arial,sans-serif; font-size:clamp(18px,1.4vw,22px); font-weight:400; line-height:1; letter-spacing:.055em; color:#153d70; text-transform:uppercase; }
 .skills-column ul { margin:0; padding:0; list-style:none; font-family:'MGM',Arial,sans-serif; font-size:clamp(16px,1.15vw,20px); font-weight:400; line-height:1.34; letter-spacing:-.025em; }
 .skills-column li { margin:0; }
 @media(max-width:900px) {
