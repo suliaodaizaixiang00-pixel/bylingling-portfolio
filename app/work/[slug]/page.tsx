@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation';
 
 const categories = {
-  'product-development': ['01', 'Product Development'],
-  'product-marketing': ['02', 'Product Marketing'],
+  'product-marketing': ['01', 'Product Marketing'],
+  'influencer-marketing': ['02', 'Influencer Marketing'],
   'creative-planning': ['03', 'Creative Planning'],
-  'influencer-marketing': ['04', 'Influencer Marketing'],
-  'content-marketing': ['05', 'Content Marketing'],
+  'content-marketing': ['04', 'Content Marketing'],
+  'product-development': ['05', 'Product Development'],
   competitions: ['06', 'Competitions'],
   others: ['07', 'Others'],
 } as const;

@@ -7,11 +7,11 @@ const secondLine = 'I make people look.*';
 const headline = `${firstLine}\n${secondLine}`;
 const heroVideo = '/hero-video.mov';
 const workCategories = [
-  ['01', 'Product Development', 'product-development'],
-  ['02', 'Product Marketing', 'product-marketing'],
+  ['01', 'Product Marketing', 'product-marketing'],
+  ['02', 'Influencer Marketing', 'influencer-marketing'],
   ['03', 'Creative Planning', 'creative-planning'],
-  ['04', 'Influencer Marketing', 'influencer-marketing'],
-  ['05', 'Content Marketing', 'content-marketing'],
+  ['04', 'Content Marketing', 'content-marketing'],
+  ['05', 'Product Development', 'product-development'],
   ['06', 'Competitions', 'competitions'],
   ['07', 'Others', 'others'],
 ] as const;
@@ -230,16 +230,18 @@ export default function Home() {
           </div>
         </section>
         <section className="work-index" id="work" aria-labelledby="work-index-title">
-          <h2 className="work-index-title" id="work-index-title">Selected Works</h2>
-          <nav className="work-category-list" aria-label="Work categories">
-            {workCategories.map(([number, label, slug]) => (
-              <a className="work-category" href={`/work/${slug}`} key={slug}>
-                <span className="work-category-number">{number}</span>
-                <span className="work-category-name">{label}</span>
-                <span className="work-category-arrow" aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </nav>
+          <div className="work-list-wrap">
+            <h2 className="work-index-title" id="work-index-title">Selected work</h2>
+            <nav className="work-category-list" aria-label="Work categories">
+              {workCategories.map(([number, label, slug]) => (
+                <a className="work-category" href={`/work/${slug}`} key={slug}>
+                  <span className="work-category-number">{number}</span>
+                  <span className="work-category-name">{label}</span>
+                  <span className="work-category-arrow" aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </nav>
+          </div>
         </section>
         <span id="contact" className="section-anchor" />
       </section>
