@@ -230,11 +230,7 @@ export default function Home() {
           </div>
         </section>
         <section className="work-index" id="work" aria-labelledby="work-index-title">
-          <div className="work-index-intro">
-            <p className="work-kicker">Selected fields</p>
-            <h2 id="work-index-title">Work Index</h2>
-            <p className="work-index-note">Explore projects by discipline.</p>
-          </div>
+          <h2 className="work-index-title" id="work-index-title">Selected Works</h2>
           <nav className="work-category-list" aria-label="Work categories">
             {workCategories.map(([number, label, slug]) => (
               <a className="work-category" href={`/work/${slug}`} key={slug}>
