@@ -9,7 +9,7 @@ const sections = [
   {
     number: '02',
     eyebrow: 'Case 01',
-    title: 'Mistine × Fox Spirit Matchmaker',
+    title: 'MISTINE × FOX SPIRIT MATCHMAKER',
     subtitle: '— IP Co-branding Product Marketing Strategy',
     body: 'Developed an integrated product marketing strategy for Mistine’s collaboration with Fox Spirit Matchmaker, connecting product features and character identities to shape the collaboration concept, key selling points, limited-edition product experience, and campaign communication. Extended the strategy into go-to-market activation through creator seeding and social content planning, including a cosplay-focused influencer approach aligned with the IP audience and campaign narrative.',
   },
@@ -36,7 +36,7 @@ export default function ProductMarketingPage() {
         <h1 id="product-marketing-title">Product Marketing</h1>
         <div className="case-hero-meta">
           <p>From market insight to product positioning and go-to-market activation.</p>
-          <p className="case-results"><strong>Commercial results:</strong> 66 KOL Collaborations · 4.55M Social Impressions · RMB 3.60M GMV</p>
+          <p className="case-results"><strong>Commercial Results:</strong> 66 KOL Collaborations · 4.55M Social Impressions · RMB 3.60M GMV</p>
         </div>
       </section>
 
