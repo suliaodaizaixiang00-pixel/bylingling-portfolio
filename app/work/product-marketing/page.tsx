@@ -13,15 +13,16 @@ const sections = [
     subtitle: '— IP Co-branding Product Marketing Strategy',
     body: 'Developed an integrated product marketing strategy for Mistine’s collaboration with Fox Spirit Matchmaker, connecting product features and character identities to shape the collaboration concept, key selling points, limited-edition product experience, and campaign communication. Extended the strategy into go-to-market activation through creator seeding and social content planning, including a cosplay-focused influencer approach aligned with the IP audience and campaign narrative.',
     images: [
-      '/work/product-marketing/case-01/01-campaign-hero.png',
-      '/work/product-marketing/case-01/02-gift-box.png',
-      '/work/product-marketing/case-01/03-lip-products.png',
-      '/work/product-marketing/case-01/04-gift-mechanics.png',
-      '/work/product-marketing/case-01/05-strategy-deck-a.png',
-      '/work/product-marketing/case-01/06-strategy-deck-b.png',
-      '/work/product-marketing/case-01/07-strategy-deck-c.png',
-      '/work/product-marketing/case-01/08-deck-overview-a.png',
-      '/work/product-marketing/case-01/09-deck-overview-b.png',
+      '/work/product-marketing/case-01/01-campaign-hero.jpg',
+      '/work/product-marketing/case-01/02-gift-box.jpg',
+      '/work/product-marketing/case-01/03-gift-mechanics.jpg',
+      '/work/product-marketing/case-01/04-lip-products.jpg',
+      '/work/product-marketing/case-01/05-strategy-slides-01-09.png',
+      '/work/product-marketing/case-01/06-strategy-slides-10-18.png',
+      '/work/product-marketing/case-01/07-strategy-slides-19-27.png',
+      '/work/product-marketing/case-01/08-strategy-slides-28-36.png',
+      '/work/product-marketing/case-01/09-deck-overview-01-12.png',
+      '/work/product-marketing/case-01/10-deck-overview-13-24.png',
     ],
   },
   {
@@ -68,7 +69,7 @@ export default function ProductMarketingPage() {
                 {'images' in section ? section.images.map((src, index) => (
                   <figure className="case-media-slide" key={src}>
                     <span>{section.number}.{(index + 1).toString().padStart(2, '0')}</span>
-                    <img src={src} alt={`${section.title} campaign material ${index + 1}`} loading="lazy" />
+                    <img src={src} alt={`${section.title} campaign material ${index + 1}`} loading="lazy" decoding="async" />
                   </figure>
                 )) : [1, 2, 3].map((slot) => (
                   <div className="case-media-placeholder" key={slot}>
