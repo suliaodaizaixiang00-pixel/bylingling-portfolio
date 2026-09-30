@@ -37,6 +37,10 @@ const sections = [
     title: 'MISTINE MILK COFFEE LIP GLAZE',
     subtitle: '— 2024 Fall/Winter Limited Edition Product Marketing',
     body: 'Developed a seasonal product marketing strategy for Mistine’s Milk Coffee Lip Glaze Fall/Winter limited edition, translating beauty and lifestyle trends into product storytelling, visual direction, and campaign communication. Built the launch concept around the product’s shades, texture, and “Milk Coffee” associations, and extended the positioning across creator content, social communication, and promotional activation.',
+    images: [
+      '/work/product-marketing/case-02/01-strategy-slides-01-12.png',
+      '/work/product-marketing/case-02/02-strategy-slides-13-20.png',
+    ],
   },
 ] as const;
 
