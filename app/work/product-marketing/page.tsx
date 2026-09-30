@@ -5,6 +5,12 @@ const sections = [
     title: 'Market & Competitive Insights',
     lead: 'Researching the competitive landscape to inform product positioning and marketing strategy.',
     body: 'Conducted competitive benchmarking across four major beauty brands — INTOYOU, 3CE, Perfect Diary, and Winona — analyzing product portfolios, consumer profiles, positioning, sales performance, influencer strategies, and campaign activities to identify category trends and inform Mistine’s product and marketing strategy.',
+    images: [
+      '/work/product-marketing/market-insights/01-intoyou-research-01-12.png',
+      '/work/product-marketing/market-insights/02-intoyou-and-3ce-research-13-24.png',
+      '/work/product-marketing/market-insights/03-3ce-research-25-36.png',
+      '/work/product-marketing/market-insights/04-competitive-timeline.JPG',
+    ],
   },
   {
     number: '02',
