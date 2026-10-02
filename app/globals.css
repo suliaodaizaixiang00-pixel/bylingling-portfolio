@@ -187,3 +187,32 @@ html { scroll-behavior:smooth; }
   .case-media-slide,.case-media-placeholder { height:clamp(220px,78vw,360px); }
   .case-section-body { margin-top:24px; }
 }
+
+.influencer-hero h1 { font-size:clamp(58px,9vw,138px); }
+.influencer-hero-meta p + p { margin-top:12px; }
+.influencer-sections { border-top:1px solid rgb(12 14 20 / 48%); }
+.influencer-section { padding:clamp(88px,10vw,150px) 0 0; border-bottom:1px solid rgb(12 14 20 / 48%); }
+.influencer-section-header { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:20px; padding-bottom:clamp(70px,8vw,116px); }
+.influencer-section-header > p { grid-column:1 / span 2; margin:0; font-family:'IBM Plex Mono',monospace; font-size:11px; }
+.influencer-section-header > div { grid-column:4 / -1; }
+.influencer-section-kicker { display:inline-block; margin:0 0 20px; padding-bottom:4px; border-bottom:1px solid #153d70; font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1; letter-spacing:.08em; text-transform:uppercase; }
+.influencer-section-header h2 { margin:0; font-family:'MGM',Arial,sans-serif; font-size:clamp(34px,5vw,74px); font-weight:400; line-height:.92; letter-spacing:-.05em; text-transform:none; }
+.influencer-section-header h3 { margin:42px 0 0; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:300; letter-spacing:.08em; }
+.influencer-section-intro { max-width:760px; margin:14px 0 0; font-size:clamp(13px,.9vw,15px); line-height:1.5; }
+.influencer-project { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:20px; align-items:start; padding:clamp(64px,7vw,104px) 0; border-top:1px solid rgb(12 14 20 / 36%); }
+.influencer-project-copy { grid-column:1 / span 5; max-width:600px; }
+.influencer-project-number { margin:0 0 30px!important; font-family:'IBM Plex Mono',monospace; font-size:10px!important; letter-spacing:.06em; }
+.influencer-project-copy h3 { margin:0; font-family:'MGM',Arial,sans-serif; font-size:clamp(24px,3vw,44px); font-weight:400; line-height:1; letter-spacing:-.035em; text-transform:none; }
+.influencer-project-copy > p:last-child:not(.influencer-project-number) { margin:18px 0 0; font-size:clamp(13px,.9vw,15px); line-height:1.5; }
+.influencer-media-wrap { grid-column:7 / -1; }
+@media(max-width:800px) {
+  .influencer-hero h1 { font-size:clamp(48px,15vw,78px); }
+  .influencer-section { padding-top:76px; }
+  .influencer-section-header { display:block; padding-bottom:64px; }
+  .influencer-section-header > p { margin-bottom:30px; }
+  .influencer-section-header h2 { font-size:clamp(34px,11vw,54px); }
+  .influencer-section-header h3 { margin-top:32px; }
+  .influencer-project { display:block; padding:64px 0; }
+  .influencer-project-copy { margin-bottom:38px; }
+  .influencer-project-copy h3 { font-size:clamp(27px,8vw,40px); }
+}
