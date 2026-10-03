@@ -1,9 +1,8 @@
 import { notFound } from 'next/navigation';
 
 const categories = {
-  'creative-planning': ['03', 'Creative Planning'],
-  'content-marketing': ['04', 'Content Marketing'],
-  'product-development': ['05', 'Product Development'],
+  'content-social-media': ['04', 'Content & Social Media'],
+  'digital-product-development': ['05', 'Digital Product Development'],
   competitions: ['06', 'Competitions'],
   others: ['07', 'Others'],
 } as const;

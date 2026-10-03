@@ -9,9 +9,9 @@ const heroVideo = '/hero-video.mov';
 const workCategories = [
   ['01', 'Product Marketing', 'product-marketing'],
   ['02', 'Influencer Marketing', 'influencer-marketing'],
-  ['03', 'Creative Planning', 'creative-planning'],
-  ['04', 'Content Marketing', 'content-marketing'],
-  ['05', 'Product Development', 'product-development'],
+  ['03', 'Creative & Campaign Strategy', 'creative-campaign-strategy'],
+  ['04', 'Content & Social Media', 'content-social-media'],
+  ['05', 'Digital Product Development', 'digital-product-development'],
   ['06', 'Competitions', 'competitions'],
   ['07', 'Others', 'others'],
 ] as const;

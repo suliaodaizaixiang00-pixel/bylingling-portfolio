@@ -216,3 +216,10 @@ html { scroll-behavior:smooth; }
   .influencer-project-copy { margin-bottom:38px; }
   .influencer-project-copy h3 { font-size:clamp(27px,8vw,40px); }
 }
+
+.creative-strategy-hero h1 { font-size:clamp(54px,8.2vw,124px); }
+.creative-case-media { grid-column:7 / -1; }
+@media(max-width:800px) {
+  .creative-strategy-hero h1 { font-size:clamp(44px,14vw,74px); }
+  .creative-case .case-section-heading { margin-bottom:42px; }
+}
