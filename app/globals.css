@@ -219,7 +219,11 @@ html { scroll-behavior:smooth; }
 
 .creative-strategy-hero h1 { font-size:clamp(54px,8.2vw,124px); }
 .creative-case-media { grid-column:7 / -1; }
+.content-social-hero h1 { font-size:clamp(52px,8vw,122px); }
+.content-planning-intro { max-width:590px; }
+.content-planning-intro strong { color:#153d70; font-weight:400; }
 @media(max-width:800px) {
   .creative-strategy-hero h1 { font-size:clamp(44px,14vw,74px); }
   .creative-case .case-section-heading { margin-bottom:42px; }
+  .content-social-hero h1 { font-size:clamp(42px,13vw,70px); }
 }
