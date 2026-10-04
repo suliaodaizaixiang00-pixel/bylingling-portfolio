@@ -1,16 +1,30 @@
 const contentPlanningImages = [
   '/work/content-social-media/content-planning/01-mistine-campaign-roadmap.png',
-  '/work/content-social-media/content-planning/02-coca-cola-social-operations.png',
+  '/work/content-social-media/content-planning/02-coca-cola-calendar-week-01-02.png',
+  '/work/content-social-media/content-planning/03-coca-cola-calendar-week-03-05.png',
+  '/work/content-social-media/content-planning/04-coca-cola-weibo.png',
+  '/work/content-social-media/content-planning/05-coca-cola-wechat.png',
 ] as const;
 
 const editorialProjects = [
   {
     title: 'XIHU MUSIC FESTIVAL: Featured Editorial Content',
-    images: ['/work/content-social-media/editorial/01-xihu-music-festival.png'],
+    images: [
+      '/work/content-social-media/editorial/music-festival-01.png',
+      '/work/content-social-media/editorial/music-festival-02.png',
+      '/work/content-social-media/editorial/music-festival-03.png',
+      '/work/content-social-media/editorial/music-festival-04.png',
+    ],
   },
   {
     title: 'XIHU TEA ROOM: Recurring Editorial Column',
-    images: ['/work/content-social-media/editorial/02-xihu-tea-room.png'],
+    images: [
+      '/work/content-social-media/editorial/tea-room-01.png',
+      '/work/content-social-media/editorial/tea-room-02.png',
+      '/work/content-social-media/editorial/tea-room-03.png',
+      '/work/content-social-media/editorial/tea-room-04.png',
+      '/work/content-social-media/editorial/tea-room-05.png',
+    ],
   },
   {
     title: 'Personal WeChat Editorial Design & Editing',
@@ -21,7 +35,12 @@ const editorialProjects = [
 const shortFormProjects = [
   {
     title: 'NEED! MARKET — Event Video Planning & Production',
-    images: ['/work/content-social-media/short-form/01-need-market-video.png'],
+    images: [
+      '/work/content-social-media/short-form/need-market-01.png',
+      '/work/content-social-media/short-form/need-market-02.png',
+      '/work/content-social-media/short-form/need-market-03.png',
+      '/work/content-social-media/short-form/need-market-04.png',
+    ],
   },
 ] as const;
 

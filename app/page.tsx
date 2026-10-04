@@ -182,7 +182,7 @@ export default function Home() {
             <div className="resume-content">
               <article className="resume-entry education-entry">
                 <h3>The Chinese University of Hong Kong</h3>
-                <p><em>Master of Arts in Anthropology</em> <span aria-hidden="true">|</span> GPA: 3.7/4.0</p>
+                <p><em>Master of Arts in Anthropology</em> <span aria-hidden="true">|</span> GPA: 3.7/4.0 (Dean&apos;s List)</p>
               </article>
               <article className="resume-entry education-entry">
                 <h3>Hangzhou City University</h3>
