@@ -28,7 +28,12 @@ const editorialProjects = [
   },
   {
     title: 'Personal WeChat Editorial Design & Editing',
-    images: ['/work/content-social-media/editorial/03-personal-wechat-design.png'],
+    images: [
+      '/work/content-social-media/editorial/personal-wechat/01-2022-hit.png',
+      '/work/content-social-media/editorial/personal-wechat/02-albums.png',
+      '/work/content-social-media/editorial/personal-wechat/03-albums-detail.png',
+      '/work/content-social-media/editorial/personal-wechat/04-movies.png',
+    ],
   },
 ] as const;
 

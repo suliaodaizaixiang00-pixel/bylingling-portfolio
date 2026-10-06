@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 
 const categories = {
   'digital-product-development': ['05', 'Digital Product Development'],
-  competitions: ['06', 'Competitions'],
   others: ['07', 'Others'],
 } as const;
 
