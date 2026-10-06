@@ -13,7 +13,6 @@ const workCategories = [
   ['04', 'Content & Social Media', 'content-social-media'],
   ['05', 'Digital Product Development', 'digital-product-development'],
   ['06', 'Competitions', 'competitions'],
-  ['07', 'Others', 'others'],
 ] as const;
 
 export default function Home() {
