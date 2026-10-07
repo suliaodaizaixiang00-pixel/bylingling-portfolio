@@ -1,32 +1,74 @@
 const strategyProjects = [
-  'CWM Campaigns OCP Marketing — Influencer Brief & Review',
-  'Lemon Coke × McDonald’s Social Campaign Review',
-  'Coke FWWC Social Campaign — Influencer Brief & Review',
-  'Coke MAF Campaign — Influencer Brief',
-  'CWM O2O Campaigns — Influencer Brief',
+  {
+    title: 'CWM Campaigns OCP Marketing — Influencer Brief & Review',
+    images: [
+      '/work/influencer-marketing/strategy/cwm-ocp/01-kol-brief.png',
+      '/work/influencer-marketing/strategy/cwm-ocp/02-project-background.png',
+      '/work/influencer-marketing/strategy/cwm-ocp/03-social-wave.png',
+    ],
+  },
+  {
+    title: 'Lemon Coke × McDonald’s Social Campaign Review',
+    images: [
+      '/work/influencer-marketing/strategy/lemon-coke-mcd/01-cover.png',
+      '/work/influencer-marketing/strategy/lemon-coke-mcd/02-kol-performance.png',
+      '/work/influencer-marketing/strategy/lemon-coke-mcd/03-learning.png',
+    ],
+  },
+  {
+    title: 'Coke FWWC Social Campaign — Influencer Brief & Review',
+    images: ['/work/influencer-marketing/strategy/fwwc/01-fwwc-review.png'],
+  },
+  {
+    title: 'Coke MAF Campaign — Influencer Brief',
+    images: [
+      '/work/influencer-marketing/strategy/coke-maf/01-kol-brief.png',
+      '/work/influencer-marketing/strategy/coke-maf/02-seasonal-kol.png',
+    ],
+  },
+  {
+    title: 'CWM O2O Campaigns — Influencer Brief',
+    images: [
+      '/work/influencer-marketing/strategy/cwm-o2o/01-wave-01.png',
+      '/work/influencer-marketing/strategy/cwm-o2o/02-shenyang-food-festival.png',
+    ],
+  },
 ] as const;
 
 const activationProjects = [
   {
     title: 'COCA-COLA CHINA — CWM O2O Campaigns',
     body: 'Coordinated 64 KOLs across 11 cities, extending campaign engagement from social media to offline retail through store-visit content etc. while maintaining consistent brand messaging across local executions.',
+    images: [
+      '/work/influencer-marketing/activation/cwm-o2o/01-social-connection-plan.png',
+      '/work/influencer-marketing/activation/cwm-o2o/02-campaign-calendar.png',
+      '/work/influencer-marketing/activation/cwm-o2o/03-kol-strategy.png',
+      '/work/influencer-marketing/activation/cwm-o2o/04-case-video-reference.png',
+    ],
   },
   {
     title: 'MISTINE CHINA — Multi-platform Creator Activation',
     body: 'Coordinated 66 KOL collaborations across Weibo, RED, and Douyin as part of Mistine’s integrated marketing campaigns, aligning creator content with campaign positioning and messaging across social platforms.',
+    images: [
+      '/work/influencer-marketing/activation/mistine/01-single-product-seeding.png',
+      '/work/influencer-marketing/activation/mistine/02-makeup-brief.png',
+      '/work/influencer-marketing/activation/mistine/03-material-guidance.png',
+      '/work/influencer-marketing/activation/mistine/04-giftbox-mechanisms.png',
+      '/work/influencer-marketing/activation/mistine/05-kol-tracker.png',
+    ],
   },
 ] as const;
 
-function PlaceholderGallery({ label, number }: { label: string; number: string }) {
+function ImageGallery({ label, number, images }: { label: string; number: string; images: readonly string[] }) {
   return (
     <div className="case-media-wrap influencer-media-wrap">
       <p className="case-media-hint">Swipe / scroll to explore →</p>
-      <div className="case-media-track" tabIndex={0} aria-label={`${label} image gallery; images coming soon`}>
-        {[1, 2, 3].map((slot) => (
-          <div className="case-media-placeholder" key={slot}>
-            <span>{number}.{slot.toString().padStart(2, '0')}</span>
-            <p>Image coming soon</p>
-          </div>
+      <div className="case-media-track" tabIndex={0} aria-label={`${label} image gallery`}>
+        {images.map((src, index) => (
+          <figure className="case-media-slide" key={src}>
+            <span>{number}.{(index + 1).toString().padStart(2, '0')}</span>
+            <img src={src} alt={`${label} campaign material ${index + 1}`} loading="lazy" decoding="async" />
+          </figure>
         ))}
       </div>
     </div>
@@ -65,13 +107,13 @@ export default function InfluencerMarketingPage() {
           </header>
 
           <div className="influencer-projects">
-            {strategyProjects.map((title, index) => (
-              <article className="influencer-project" key={title}>
+            {strategyProjects.map((project, index) => (
+              <article className="influencer-project" key={project.title}>
                 <div className="influencer-project-copy">
                   <p className="influencer-project-number">01.{(index + 1).toString().padStart(2, '0')}</p>
-                  <h3>{title}</h3>
+                  <h3>{project.title}</h3>
                 </div>
-                <PlaceholderGallery label={title} number={`01.${(index + 1).toString().padStart(2, '0')}`} />
+                <ImageGallery label={project.title} number={`01.${(index + 1).toString().padStart(2, '0')}`} images={project.images} />
               </article>
             ))}
           </div>
@@ -95,7 +137,7 @@ export default function InfluencerMarketingPage() {
                   <h3>{project.title}</h3>
                   <p>{project.body}</p>
                 </div>
-                <PlaceholderGallery label={project.title} number={`02.${(index + 1).toString().padStart(2, '0')}`} />
+                <ImageGallery label={project.title} number={`02.${(index + 1).toString().padStart(2, '0')}`} images={project.images} />
               </article>
             ))}
           </div>
