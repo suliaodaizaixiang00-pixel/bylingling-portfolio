@@ -1,20 +1,49 @@
 const cases = [
-  'Coke With Meals — Integrated Social Communications Plan',
-  'Coke With Meals — Integrated Marketing Strategy',
-  'Lemon Coke × McDonald’s Social Campaign Strategy',
-  'MISTINE Sports Series — Co-Branding Partnership Proposal',
+  {
+    title: 'Coke With Meals — Integrated Social Communications Plan',
+    images: [
+      '/work/creative-campaign-strategy/case-01/01-cwm-social-connection.png',
+      '/work/creative-campaign-strategy/case-01/02-campaign-calendar.png',
+      '/work/creative-campaign-strategy/case-01/03-catering-market.png',
+      '/work/creative-campaign-strategy/case-01/04-creative-activation.png',
+    ],
+  },
+  {
+    title: 'Coke With Meals — Integrated Marketing Strategy',
+    images: [
+      '/work/creative-campaign-strategy/case-02/01-cwm-proposal.png',
+      '/work/creative-campaign-strategy/case-02/02-cwm-content-calendar.png',
+      '/work/creative-campaign-strategy/case-02/03-cwm-event-content.png',
+    ],
+  },
+  {
+    title: 'Lemon Coke × McDonald’s Social Campaign Strategy',
+    images: [
+      '/work/creative-campaign-strategy/case-03/01-lemon-coke-overview.png',
+      '/work/creative-campaign-strategy/case-03/02-lemon-coke-kol.png',
+      '/work/creative-campaign-strategy/case-03/03-lemon-coke-performance.png',
+      '/work/creative-campaign-strategy/case-03/04-lemon-coke-listening.png',
+    ],
+  },
+  {
+    title: 'MISTINE Sports Series — Co-Branding Partnership Proposal',
+    images: [
+      '/work/creative-campaign-strategy/case-04/01-mistine-partnership.png',
+      '/work/creative-campaign-strategy/case-04/02-mistine-product-strategy.png',
+    ],
+  },
 ] as const;
 
-function PlaceholderGallery({ label, number }: { label: string; number: string }) {
+function ImageGallery({ label, number, images }: { label: string; number: string; images: readonly string[] }) {
   return (
     <div className="case-media-wrap creative-case-media">
       <p className="case-media-hint">Swipe / scroll to explore →</p>
-      <div className="case-media-track" tabIndex={0} aria-label={`${label} image gallery; images coming soon`}>
-        {[1, 2, 3].map((slot) => (
-          <div className="case-media-placeholder" key={slot}>
-            <span>{number}.{slot.toString().padStart(2, '0')}</span>
-            <p>Image coming soon</p>
-          </div>
+      <div className="case-media-track" tabIndex={0} aria-label={`${label} image gallery`}>
+        {images.map((src, index) => (
+          <figure className="case-media-slide" key={src}>
+            <span>{number}.{(index + 1).toString().padStart(2, '0')}</span>
+            <img src={src} alt={`${label} campaign material ${index + 1}`} loading="lazy" decoding="async" />
+          </figure>
         ))}
       </div>
     </div>
@@ -39,16 +68,16 @@ export default function CreativeCampaignStrategyPage() {
       </section>
 
       <div className="case-sections creative-case-sections">
-        {cases.map((title, index) => {
+        {cases.map((entry, index) => {
           const caseNumber = (index + 1).toString().padStart(2, '0');
           return (
-            <section className="case-section creative-case" key={title}>
+            <section className="case-section creative-case" key={entry.title}>
               <header className="case-section-heading">
                 <p className="case-section-number">{caseNumber}</p>
                 <p className="case-section-eyebrow">Case {caseNumber}</p>
-                <h2>{title}</h2>
+                <h2>{entry.title}</h2>
               </header>
-              <PlaceholderGallery label={title} number={`03.${caseNumber}`} />
+              <ImageGallery label={entry.title} number={`03.${caseNumber}`} images={entry.images} />
             </section>
           );
         })}
