@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const firstLine = 'Lingling Yang.';
+const firstLine = 'Lingling.';
 const secondLine = 'I make people look.*';
 const headline = `${firstLine}\n${secondLine}`;
 const heroVideo = '/hero-video.mov';
