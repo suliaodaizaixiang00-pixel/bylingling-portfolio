@@ -114,7 +114,7 @@ export default function Home() {
           <nav className="portfolio-nav" aria-label="Portfolio sections">
             <a className={`nav-item nav-hover ${activeSection === 'experience' ? 'is-active' : ''}`} href="#experience"><span>(A)</span> Experience</a>
             <a className={`nav-item nav-hover ${activeSection === 'work' ? 'is-active' : ''}`} href="#work"><span>(B)</span> Work</a>
-            <a className="nav-item nav-hover" href="#contact"><span>(C)</span> Contact</a>
+            <a className="nav-item nav-hover" href="/contact"><span>(C)</span> Contact</a>
           </nav>
           <time className="portfolio-clock" aria-label="Current local time">{clock}</time>
         </header>
@@ -242,7 +242,6 @@ export default function Home() {
             </nav>
           </div>
         </section>
-        <span id="contact" className="section-anchor" />
       </section>
     </main>
   );

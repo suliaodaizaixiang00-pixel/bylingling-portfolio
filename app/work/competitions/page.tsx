@@ -5,6 +5,13 @@ const competitions = [
     title: 'Campaign Proposal for the National Advertising Art Design Competition',
     award: 'National Third Prize, 15th National Advertising Art Design Competition',
     concept: 'A self-portrait represents how we portray, understand, and construct our true selves on the XPPen pen display through the support of X3 technology in the pen held in our hands. It is a journey of self-exploration and reflection, encouraging people to listen to those distinctive inner voices from different stages of their lives.',
+    images: [
+      '/work/competitions/competition-01/01-xppen-overview.png',
+      '/work/competitions/competition-01/02-xppen-market-analysis.png',
+      '/work/competitions/competition-01/03-xppen-strategy.png',
+      '/work/competitions/competition-01/04-xppen-campaign-activation.png',
+      '/work/competitions/competition-01/05-xppen-creative-execution.png',
+    ],
   },
   {
     number: '02',
@@ -12,19 +19,25 @@ const competitions = [
     title: 'Campaign Proposal for the Advertising Festival of College Students',
     award: 'National Bronze Prize, 2022 Advertising Festival of College Students',
     concept: 'By drawing on the product’s core characteristics, we used the idea of a “trio” as the creative entry point, linking Calleton’s baked cake with the deliciousness, nutrition, and sense of happiness it brings, as well as with its target consumer groups. The message we aimed to convey is that, regardless of people’s identities in the city or whether their goals are the same, Calleton baked products can offer nourishing and delicious baked comfort when people feel tired, accompanying individuals at different stages of life as they continue striving with energy and creating a sense of urban happiness through baking.',
+    images: [
+      '/work/competitions/competition-02/01-calleton-overview.jpg',
+      '/work/competitions/competition-02/02-calleton-insight.jpg',
+      '/work/competitions/competition-02/03-calleton-activation.jpg',
+      '/work/competitions/competition-02/04-calleton-extensions.jpg',
+    ],
   },
 ] as const;
 
-function PlaceholderGallery({ number, title }: { number: string; title: string }) {
+function ImageGallery({ number, title, images }: { number: string; title: string; images: readonly string[] }) {
   return (
     <div className="case-media-wrap">
       <p className="case-media-hint">Swipe / scroll to explore →</p>
-      <div className="case-media-track" tabIndex={0} aria-label={`${title} image gallery; images coming soon`}>
-        {[1, 2, 3].map((slot) => (
-          <div className="case-media-placeholder" key={slot}>
-            <span>{number}.{slot.toString().padStart(2, '0')}</span>
-            <p>Image coming soon</p>
-          </div>
+      <div className="case-media-track" tabIndex={0} aria-label={`${title} image gallery`}>
+        {images.map((src, index) => (
+          <figure className="case-media-slide" key={src}>
+            <span>{number}.{(index + 1).toString().padStart(2, '0')}</span>
+            <img src={src} alt={`${title} campaign material ${index + 1}`} loading="lazy" decoding="async" />
+          </figure>
         ))}
       </div>
     </div>
@@ -55,7 +68,7 @@ export default function CompetitionsPage() {
               <p className="case-section-subtitle competition-award"><em>{competition.award}</em></p>
             </header>
 
-            <PlaceholderGallery number={competition.number} title={competition.title} />
+            <ImageGallery number={competition.number} title={competition.title} images={competition.images} />
 
             <div className="case-section-body competition-concept">
               <p><strong>Creative Concept:</strong></p>

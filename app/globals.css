@@ -40,11 +40,22 @@ main { min-height:200svh; transition:background-color .06s linear; }
 .nav-hover { padding:0 4px; color:inherit; text-decoration:none; transition:background-color .1s,color .1s; }
 .nav-hover:hover,.nav-hover:focus-visible,.nav-hover.is-active { background:#0c0e14; color:#e6e6e6; outline:none; }
 .section-anchor { position:absolute; bottom:0; }
+.contact-page { min-height:100svh; background:#e6e6e6; color:#0c0e14; font-family:'MGM',Arial,sans-serif; font-size:14px; line-height:1.4; text-transform:uppercase; }
+.contact-header { position:relative; }
+.contact-copy { display:flex; min-height:calc(100svh - 74px); flex-direction:column; justify-content:center; align-items:flex-start; padding:72px 40px; text-transform:uppercase; }
+.contact-copy h1 { margin:0 0 1.15em; font:inherit; font-size:clamp(14px,.95vw,16px); font-weight:400; letter-spacing:-.025em; }
+.contact-copy p { margin:0; font-size:clamp(14px,.95vw,16px); line-height:1.28; letter-spacing:-.025em; }
+.contact-copy p + p { margin-top:.6em; }
+.contact-copy a { color:inherit; text-decoration:none; border-bottom:1px solid currentColor; }
+.contact-copy a:hover,.contact-copy a:focus-visible { color:#153d70; outline:none; }
+.contact-copy .contact-thanks { margin-top:2.25em; }
 @media(max-width:800px) {
   .portfolio-header { grid-template-columns:auto 1fr; gap:12px; padding:16px; }
   .portfolio-brand { grid-column:auto; }
   .portfolio-nav { grid-column:1 / -1; grid-row:2; justify-content:space-between; gap:8px; }
   .portfolio-clock { grid-column:2; grid-row:1; }
+  .contact-copy { min-height:calc(100svh - 92px); padding:48px 16px 56px; }
+  .contact-copy h1,.contact-copy p { font-size:clamp(16px,4.4vw,19px); line-height:1.3; }
 }
 
 html { scroll-behavior:smooth; }
