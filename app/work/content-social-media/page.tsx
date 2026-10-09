@@ -144,6 +144,7 @@ export default function ContentSocialMediaPage() {
           </div>
         </section>
       </div>
+      <footer className="case-footer"><a href="/#work">← Back to work</a></footer>
     </main>
   );
 }

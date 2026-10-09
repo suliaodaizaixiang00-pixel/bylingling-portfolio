@@ -77,6 +77,7 @@ export default function CompetitionsPage() {
           </section>
         ))}
       </div>
+      <footer className="case-footer"><a href="/#work">← Back to work</a></footer>
     </main>
   );
 }

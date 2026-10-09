@@ -143,6 +143,7 @@ export default function InfluencerMarketingPage() {
           </div>
         </section>
       </div>
+      <footer className="case-footer"><a href="/#work">← Back to work</a></footer>
     </main>
   );
 }

@@ -82,6 +82,7 @@ export default function CreativeCampaignStrategyPage() {
           );
         })}
       </div>
+      <footer className="case-footer"><a href="/#work">← Back to work</a></footer>
     </main>
   );
 }

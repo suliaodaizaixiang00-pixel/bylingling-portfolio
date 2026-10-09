@@ -94,6 +94,7 @@ export default function ProductMarketingPage() {
           </section>
         ))}
       </div>
+      <footer className="case-footer"><a href="/#work">← Back to work</a></footer>
     </main>
   );
 }

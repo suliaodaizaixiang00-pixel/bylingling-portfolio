@@ -1,13 +1,21 @@
-function PlaceholderGallery() {
+const underTideImages = [
+  '/work/digital-product-development/under-tide/01-organization-list.jpg',
+  '/work/digital-product-development/under-tide/02-screening-list.jpg',
+  '/work/digital-product-development/under-tide/03-screening-list-continued.jpg',
+  '/work/digital-product-development/under-tide/04-discussion-forum.jpg',
+  '/work/digital-product-development/under-tide/05-mini-program-development.jpg',
+] as const;
+
+function ImageGallery() {
   return (
     <div className="case-media-wrap">
       <p className="case-media-hint">Swipe / scroll to explore →</p>
-      <div className="case-media-track" tabIndex={0} aria-label="Under Tide movie screening mini program image gallery; images coming soon">
-        {[1, 2, 3].map((slot) => (
-          <div className="case-media-placeholder" key={slot}>
-            <span>01.{slot.toString().padStart(2, '0')}</span>
-            <p>Image coming soon</p>
-          </div>
+      <div className="case-media-track" tabIndex={0} aria-label="Under Tide movie screening mini program image gallery">
+        {underTideImages.map((src, index) => (
+          <figure className="case-media-slide" key={src}>
+            <span>01.{(index + 1).toString().padStart(2, '0')}</span>
+            <img src={src} alt={`Under Tide movie screening mini program ${index + 1}`} loading="lazy" decoding="async" />
+          </figure>
         ))}
       </div>
     </div>
@@ -36,7 +44,7 @@ export default function DigitalProductDevelopmentPage() {
             <h2 id="under-tide-title">“Under Tide” Movie Screening WeChat Mini Program</h2>
           </header>
 
-          <PlaceholderGallery />
+          <ImageGallery />
 
           <div className="case-section-body digital-product-body">
             <p>Co-led the 0-to-1 development and launch of a movie-screening WeChat Mini Program, covering product planning, feature design, front-/back-end development, and post-launch maintenance; built core functions including screening discovery, event registration, attendee management, and a film discussion forum.</p>
@@ -44,6 +52,7 @@ export default function DigitalProductDevelopmentPage() {
           </div>
         </section>
       </div>
+      <footer className="case-footer"><a href="/#work">← Back to work</a></footer>
     </main>
   );
 }
