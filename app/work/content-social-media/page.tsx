@@ -6,9 +6,18 @@ const contentPlanningImages = [
   '/work/content-social-media/content-planning/05-coca-cola-wechat.png',
 ] as const;
 
-const editorialProjects = [
+type Project = {
+  title: string;
+  images: readonly string[];
+  description?: readonly string[];
+};
+
+const editorialProjects: readonly Project[] = [
   {
     title: 'XIHU MUSIC FESTIVAL: Featured Editorial Content',
+    description: [
+      'Contributed to the production of featured columns on the official XIHU Music Festival WeChat account, including “Fifteen Years of West Lake” and “WEWS.” Articles written and formatted by me received over 4,000 views in total.',
+    ],
     images: [
       '/work/content-social-media/editorial/music-festival-01.png',
       '/work/content-social-media/editorial/music-festival-02.png',
@@ -18,6 +27,9 @@ const editorialProjects = [
   },
   {
     title: 'XIHU TEA ROOM: Recurring Editorial Column',
+    description: [
+      'As the lead planner, conceptualized and launched “XIHU Tea Room,” a new recurring daily column on the official West Lake Music Festival WeChat account from July to October 2022, with an average of over 500 views per post.',
+    ],
     images: [
       '/work/content-social-media/editorial/tea-room-01.png',
       '/work/content-social-media/editorial/tea-room-02.png',
@@ -37,9 +49,13 @@ const editorialProjects = [
   },
 ] as const;
 
-const shortFormProjects = [
+const shortFormProjects: readonly Project[] = [
   {
     title: 'NEED! MARKET — Event Video Planning & Production',
+    description: [
+      '- Planned and managed the filming of a series of market event videos for the Chengdu pop-up from February 2 to February 5, 2024. The “On-site Series” videos received over 1,500 likes on Xiaohongshu and over 10,000 likes on WeChat Channels in total.',
+      '- Planned and hosted the “NEED! TV Series” interviews at the Chengdu pop-up from February 2 to February 5. Some of the interview videos received over 3,000 likes on Xiaohongshu, while the highest-performing single video reached over 6,000 likes on WeChat Channels.',
+    ],
     images: [
       '/work/content-social-media/short-form/need-market-01.png',
       '/work/content-social-media/short-form/need-market-02.png',
@@ -115,6 +131,9 @@ export default function ContentSocialMediaPage() {
                 <div className="influencer-project-copy">
                   <p className="influencer-project-number">02.{(index + 1).toString().padStart(2, '0')}</p>
                   <h3>{project.title}</h3>
+                  {project.description?.map((paragraph) => (
+                    <p className="influencer-project-description" key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
                 <ImageGallery label={project.title} number={`02.${(index + 1).toString().padStart(2, '0')}`} images={project.images} />
               </article>
@@ -137,6 +156,9 @@ export default function ContentSocialMediaPage() {
                 <div className="influencer-project-copy">
                   <p className="influencer-project-number">03.{(index + 1).toString().padStart(2, '0')}</p>
                   <h3>{project.title}</h3>
+                  {project.description?.map((paragraph) => (
+                    <p className="influencer-project-description" key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
                 <ImageGallery label={project.title} number={`03.${(index + 1).toString().padStart(2, '0')}`} images={project.images} />
               </article>
